@@ -354,7 +354,7 @@ h6 {
   border-radius: 6px;
   background-color: #fff;
   background: url("../img/logos-dimin.png") top center;
-  background-size: contain;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: bottom;
   background-attachment: fixed;
