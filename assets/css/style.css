@@ -243,7 +243,7 @@ h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
+  background: #394049;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 4px;
@@ -353,6 +353,13 @@ h6 {
   padding: 10px 0;
   border-radius: 6px;
   background-color: #fff;
+  background: url("../img/logos-dimin.png") top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -361,7 +368,7 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #37423b;
+  color: #fff;
 }
 
 .navbar-mobile a:hover,
@@ -383,7 +390,7 @@ h6 {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: #fff;
+  background: rgba(32, 38, 34, 0);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 
