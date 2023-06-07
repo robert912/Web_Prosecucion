@@ -442,8 +442,8 @@ h6 {
 }
 
 #hero .container {
-  padding-top: 267px;
-  padding-bottom: 119px;
+  padding-top: 306px;
+  padding-bottom: 130px;
 }
 
 #hero #img-flecha{
@@ -452,7 +452,7 @@ h6 {
 
 @media (max-width: 992px) {
   #hero .container {
-    padding-top: 62px;
+    padding-top: 76px;
   }
 
   #hero #img-flecha{
