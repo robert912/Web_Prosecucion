@@ -1,10 +1,3 @@
-/**
-* Template Name: Mentor
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -133,3 +126,24 @@
   new PureCounter();
 
 })()
+
+
+$(document).ready(function(){
+  
+  /* Whatsapp */
+  //$('.text_whatsapp').hide();
+  //https://formsubmit.io/send/bbdc3f30-7098-4ec1-b7cb-c9eb44f5e364
+  $(".whatsapp_flotante").click(function(e) {
+    fono = "56974331446";
+    mensajePredeterminado = "Hola! Quisiera más información sobre Diplomados"
+    e.preventDefault();
+    var tab = window.open('https://api.whatsapp.com/send?phone='+fono+'&text='+mensajePredeterminado, '_blank');
+    if(tab){
+      tab.focus(); //ir a la pestaña
+    }else{
+      alert('Pestañas bloqueadas, activa las ventanas emergentes (Popups) ');
+      return false;
+    }
+  });
+});
+  

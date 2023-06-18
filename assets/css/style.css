@@ -1737,21 +1737,44 @@ section {
 # Whatsapp
 --------------------------------------------------------------*/
 
-.whatsapp {
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:40px;
-  right:40px;
-  background-color:#25d366;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  font-size:39px;
-  z-index:100;
-  box-shadow: 2px 2px 3px #999;
+.whatsapp_flotante {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 99999999;
 }
 
-.whatsapp-icon {
-  margin-top:13px;
+.whatsapp_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e4e4;
+  color: #7f7d7d;
+  padding: 0 12px;
+  border-radius: 25px;
+  font-size: 13px;
+  line-height: 32px;
+}
+
+.whatsapp_contenido {
+  margin: 0 8px 0 -12px;
+  order: 0;
+}
+
+.whatsapp_imagen {
+  pointer-events: none;
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+
+@media (max-width: 768px) {
+  .whatsapp_icon {
+    background-color: transparent;
+  }
+
+  .text_whatsapp {
+    display: none;
+  }
 }
