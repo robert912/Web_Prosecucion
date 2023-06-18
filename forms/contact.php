@@ -29,7 +29,7 @@
     'host' => 'mail.dimin.cl',
     'username' => 'support@dimin.cl',
     'password' => '{j+c+eB&VJFj',
-    'port' => '465'
+    'port' => '587'
   );
   
 
