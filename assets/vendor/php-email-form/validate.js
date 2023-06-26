@@ -15,7 +15,7 @@
       let thisForm = this;
 
       let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
+      //let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
       
       if( ! action ) {
         displayError(thisForm, 'The form action property is not set!');
@@ -27,7 +27,8 @@
 
       let formData = new FormData( thisForm );
 
-      if ( recaptcha ) {
+      /*if ( recaptcha ) {
+          displayError(thisForm, "error");
         if(typeof grecaptcha !== "undefined" ) {
           grecaptcha.ready(function() {
             try {
@@ -45,7 +46,8 @@
         }
       } else {
         php_email_form_submit(thisForm, action, formData);
-      }
+      }*/
+      php_email_form_submit(thisForm, action, formData);
     });
   });
 
@@ -55,20 +57,13 @@
       body: formData,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+    .then(response => response.json()).then(data => {
+      if(data == 1) {
+        thisForm.querySelector('.loading').classList.remove('d-block');
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        displayError(thisForm, "No se pudo enviar el mensaje :(" ); 
       }
     })
     .catch((error) => {
