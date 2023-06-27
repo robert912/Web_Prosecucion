@@ -131,8 +131,6 @@
 $(document).ready(function(){
   
   /* Whatsapp */
-  //$('.text_whatsapp').hide();
-  //https://formsubmit.io/send/bbdc3f30-7098-4ec1-b7cb-c9eb44f5e364
   $(".whatsapp_flotante").click(function(e) {
     fono = "56974331446";
     mensajePredeterminado = "Hola! Quisiera más información sobre Diplomados"

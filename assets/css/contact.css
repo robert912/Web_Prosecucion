@@ -1595,7 +1595,7 @@ section {
   line-height: 0;
   color: var(--color-primary);
   border-radius: 50%;
-  border: 2px dotted #ffd565;
+  border: 2px dotted var(--color-primary);
 }
 
 .contact .info-item h3 {

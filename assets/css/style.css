@@ -1565,17 +1565,13 @@ section {
   font-size: 14px;
   padding: 25px;
   color: var(--color-default);
+  background: url("../img/img_foot.jpg") top center no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 #footer-direccion {
   color: var(--color-cobre);
-}
-
-.footer {
-  color: var(--color-default);
-  background: url("../img/img_foot.jpg") top center no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 /*--------------------------------------------------------------
