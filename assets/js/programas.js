@@ -6,4 +6,8 @@ $(document).ready(function () {
             $(this).toggle(value === "*" || $(this)[0].className.toLowerCase().indexOf(value)> -1)
         });
     });
+    $('.portfolio-flters li').click(function() {
+        $('.portfolio-flters li').removeClass('active');
+        $(this).addClass('active');
+      });
 });
