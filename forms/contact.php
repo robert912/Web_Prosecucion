@@ -22,7 +22,7 @@ try {
     /*$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;*/            //Enable implicit TLS encryption
    
 
-    //Recipients
+    //Destinatarios
     $mail->setFrom($_POST['email'], $_POST['name']);
     $mail->addAddress($receiving_email_address);    //Add a recipient
     /*$mail->addAddress('comunicaciones.dimin@usach.cl');              //Name is optional
@@ -32,8 +32,14 @@ try {
 
     /*/Attachments
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    $mail->addAttachment('/home/robert/Descargas/128.pdf');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name*/
-    
+    $path = 'upload/' . $_FILES["resume"]["name"];
+    move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
+    $mail->AddAttachment($path);
+    //$mail->addAttachment('/home/robert/Descargas','128.pdf');
+    //$mail->addAttachment('/var/tmp/file.tar.gz'); 
+
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = "Prosecucion de Estudios - {$_POST['subject']}";
