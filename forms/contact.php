@@ -34,9 +34,9 @@ try {
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/home/robert/Descargas/128.pdf');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name*/
-    //$path = 'upload/' . $_FILES["resume"]["name"];
+    $path = $_FILES["resume"]["tmp_name"];
     //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-    //$mail->AddAttachment($path);
+    $mail->AddAttachment($path);
     //$mail->addAttachment('/home/robert/Descargas','128.pdf');
     $mail->addAttachment('../assets/img/logos-dimin.png'); 
 
