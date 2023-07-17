@@ -38,7 +38,7 @@ try {
     //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
     //$mail->AddAttachment($path);
     //$mail->addAttachment('/home/robert/Descargas','128.pdf');
-    $mail->addAttachment('../img/logos-dimin.png'); 
+    $mail->addAttachment('../assets/img/logos-dimin.png'); 
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
