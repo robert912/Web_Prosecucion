@@ -30,15 +30,10 @@ try {
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');*/
 
-    /*/Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('/home/robert/Descargas/128.pdf');         //Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name*/
-    $path = $_FILES["resume"]["name"];
-    //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-    $mail->AddAttachment($_FILES["resume"]["tmp_name"], $path);
-    //$mail->addAttachment('/home/robert/Descargas','128.pdf');
-    $mail->addAttachment('../assets/img/logos-dimin.png'); 
+    //Attachments
+    $name = $_FILES["resume"]["name"];
+    $path = $_FILES["resume"]["tmp_name"]
+    $mail->AddAttachment($path, $name);
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
