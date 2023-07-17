@@ -53,6 +53,6 @@ try {
     //echo 'Message has been sent';
 
 } catch (Exception $e) {
-    echo "Mailer Error: {$mail->ErrorInfo}";
+    echo "{$mail->ErrorInfo}";
 }
 ?>
