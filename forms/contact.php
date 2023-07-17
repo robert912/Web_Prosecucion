@@ -32,7 +32,7 @@ try {
 
     //Attachments
     $name = $_FILES["resume"]["name"];
-    $path = $_FILES["resume"]["tmp_name"]
+    $path = $_FILES["resume"]["tmp_name"];
     $mail->AddAttachment($path, $name);
 
     //Content
