@@ -142,7 +142,7 @@ section {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -408,7 +408,7 @@ section {
   padding-bottom: 130px;
 }
 
-#hero #img-flecha{
+#hero #img-flecha, #hero .btn-get-started{
   display: none;
 }
 
@@ -417,8 +417,28 @@ section {
     padding-top: 76px;
   }
 
-  #hero #img-flecha{
+  #hero #img-flecha, #hero .btn-get-started{
     display: block;
+  }
+
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 30px;
+    border: 2px solid var(--color-default);
+    color: var(--color-default);
+    background: var(--color-secondary);
+  }
+  
+  #hero .btn-get-started:hover {
+    background: var(--color-success);
+    border: 2px solid var(--color-success);
   }
 }
 
@@ -435,26 +455,6 @@ section {
   color: #eee;
   margin: 10px 0 0 0;
   font-size: 24px;
-}
-
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 35px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin-top: 30px;
-  border: 2px solid var(--color-default);
-  color: var(--color-default);
-  background: var(--color-secondary);
-}
-
-#hero .btn-get-started:hover {
-  background: var(--color-success);
-  border: 2px solid var(--color-success);
 }
 
 @media (min-width: 1024px) {
@@ -536,9 +536,11 @@ section {
   background-attachment: fixed;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  padding: 20px;
 }
 
-#ingreso h1, #ingreso h2 {
+#ingreso h1, #ingreso h2, #ingreso img {
   display: none;
 }
 
@@ -572,8 +574,11 @@ section {
     display: block;
   }
 
-}
+  #ingreso img {
+    display: block;
+  }
 
+}
 
 /*--------------------------------------------------------------
 # Courses

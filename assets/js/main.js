@@ -81,7 +81,7 @@
 
   /**
    * Testimonials slider
-   */
+   
   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
@@ -106,7 +106,7 @@
         spaceBetween: 20
       }
     }
-  });
+  });*/
 
   /**
    * Animation on scroll
@@ -142,6 +142,11 @@ $(document).ready(function(){
       alert('Pestañas bloqueadas, activa las ventanas emergentes (Popups) ');
       return false;
     }
+  });
+
+  $("#ingreso").click(function() {
+    // Cambiar la ubicación del navegador a la URL deseada
+    window.location.href = "contact.html";
   });
 });
   
