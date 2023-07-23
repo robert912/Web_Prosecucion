@@ -120,6 +120,7 @@
 .projects .course-content h3 {
   font-weight: 700;
   font-size: 20px;
+  color: var(--color-primary);
 }
 
 .projects .course-content p {

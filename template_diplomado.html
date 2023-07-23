@@ -36,7 +36,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top secundario">
+    <header id="header" class="fixed-top secondary">
         <div class="container d-flex align-items-center">
             <a href="index.html" class="logo me-auto"><img src="assets/img/DIMIN-opc.-blanco.png" alt=""
                     class="img-fluid"></a>
@@ -80,59 +80,50 @@
     </section><!-- End Hero -->
 
     <!-- ====== Diplomado ========== -->
-<section id="diplomado" class="d-flex justify-content-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="icon fa fa-globe"></i>
-                                    Section 1
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                            </div>
-                        </div>
+    <div style="background-color: #f0f0f0;">
+        <div class="container mt-4">
+            <div id="accordion">
+                <!-- Acordeón 1 -->
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Acordeón 1
+                            </button>
+                        </h2>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="icon fa fa-briefcase"></i>
-                                    Section 2
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="icon fa fa-mobile"></i>
-                                    Section 3
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                            </div>
+    
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body" style="color: white; background-color: transparent;">
+                            <!-- Contenido del primer acordeón -->
+                            Contenido del Acordeón 1
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+      
+
+<section class="d-flex justify-content-center secondary">
+    <div class="container">
+        asd
+    </div>
+</section>
+<section  class="d-flex justify-content-center primary">
+    <div class="container">
+        asd
+    </div>
+</section>
+<section  class="d-flex justify-content-center secondary">
+    <div class="container">
+        asd
+    </div>
+</section>
+<section  class="d-flex justify-content-center primary">
+    <div class="container">
+        asd
     </div>
 </section>
     <!-- End Diplomado -->
@@ -202,8 +193,6 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/template_diplomado.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 
