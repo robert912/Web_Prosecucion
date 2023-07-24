@@ -1,0 +1,102 @@
+/*--------------------------------------------------------------
+# Our Diplomado Section
+--------------------------------------------------------------*/
+a:hover,a:focus{
+  text-decoration: none;
+  outline: none;
+}
+
+#diplomado_detalle h1 {
+  margin: 0;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#diplomado_detalle p {
+  margin-top: 49px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+}
+
+#diplomado_detalle img {
+  margin: 0;
+  margin: 0;
+  max-width: 100%;
+  text-transform: uppercase;
+}
+
+.section_diplomado_default .title {
+
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.section_diplomado_default p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  padding: 10px, 0;
+}
+
+.section_diplomado .title {
+
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-default);
+}
+
+.section_diplomado p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-default);
+  padding: 10px, 0;
+}
+
+.section_diplomado p .texto {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  color: var(--color-default);
+  padding: 10px, 0;
+}
+
+/* 2 Botones separados */
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-top: auto;
+}
+
+hr {
+  color: var(--color-cobre);
+  border-top: 2px solid  var(--color-cobre);
+}
+
+/* Estilos para el contenedor */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Proporción de aspecto 16:9 (para video widescreen) */
+  overflow: hidden;
+}
+
+/* Estilos para el video */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*--------------------------------------------------------------
