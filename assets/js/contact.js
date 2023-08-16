@@ -28,8 +28,7 @@ var adjuntar_archivos = () => {
     });
 
 
-    dropArea.on("dragleave", function (event) {
-        event.preventDefault();
+    dropArea.on("dragleave", function () {
         dropArea.removeClass("active");
         dragText.html('<i class="bi bi-cloud-upload" aria-hidden="true"></i> Arrastra y suelta para cargar archivos');
     });
@@ -37,7 +36,7 @@ var adjuntar_archivos = () => {
 
     dropArea.on("drop", function (event) {
         event.preventDefault();
-        let files = event.originalEvent.dataTransfer.files;
+        const files = event.originalEvent.dataTransfer.files;
         inputFile.files = files;
         showFile(files);
     });
@@ -81,4 +80,3 @@ function formatFileSize(bytes) {
     const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
-
