@@ -27,14 +27,13 @@ var adjuntar_archivos = () => {
     let files = {};
 
 
-    dragToUploadForm.on("submit", function (e) {
-        alert("files")
+    /*dragToUploadForm.on("submit", function (e) {
         console.log(files)
         e.preventDefault();
         if (files) {
             this.submit();
         }
-    });
+    });*/
 
 
     dropArea.on("mouseenter", function () {
