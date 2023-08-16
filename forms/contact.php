@@ -31,7 +31,7 @@ try {
     $mail->addBCC('bcc@example.com');*/
     
     // Adjuntos
-    if (!empty($_FILES["resume"]["name"])) {
+    if (isset($_FILES["resume"]["name"])) {
       $totalFiles = count($_FILES["resume"]["name"]);
       for ($i = 0; $i < $totalFiles; $i++) {
           $name = $_FILES["resume"]["name"][$i];
