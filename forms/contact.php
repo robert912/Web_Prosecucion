@@ -38,8 +38,6 @@ try {
           $path = $_FILES["resume"]["tmp_name"][$i];
           $mail->addAttachment($path, $name);
       }
-    }else {
-      $mail->addAttachment($path, $name);
     }
     //Attachments
     //$name = $_FILES["resume"]["name"];
