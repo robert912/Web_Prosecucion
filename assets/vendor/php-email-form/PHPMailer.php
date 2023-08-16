@@ -3213,33 +3213,35 @@ class PHPMailer
         $disposition = 'attachment'
     ) {
         try {
-            if (!static::fileIsAccessible($path)) {
-                throw new Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
-            }
+            if (!empty($path)) {
+                if (!static::fileIsAccessible($path)) {
+                    throw new Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
+                }
 
-            //If a MIME type is not specified, try to work it out from the file name
-            if ('' === $type) {
-                $type = static::filenameToType($path);
-            }
+                //If a MIME type is not specified, try to work it out from the file name
+                if ('' === $type) {
+                    $type = static::filenameToType($path);
+                }
 
-            $filename = (string) static::mb_pathinfo($path, PATHINFO_BASENAME);
-            if ('' === $name) {
-                $name = $filename;
-            }
-            if (!$this->validateEncoding($encoding)) {
-                throw new Exception($this->lang('encoding') . $encoding);
-            }
+                $filename = (string) static::mb_pathinfo($path, PATHINFO_BASENAME);
+                if ('' === $name) {
+                    $name = $filename;
+                }
+                if (!$this->validateEncoding($encoding)) {
+                    throw new Exception($this->lang('encoding') . $encoding);
+                }
 
-            $this->attachment[] = [
-                0 => $path,
-                1 => $filename,
-                2 => $name,
-                3 => $encoding,
-                4 => $type,
-                5 => false, //isStringAttachment
-                6 => $disposition,
-                7 => $name,
-            ];
+                $this->attachment[] = [
+                    0 => $path,
+                    1 => $filename,
+                    2 => $name,
+                    3 => $encoding,
+                    4 => $type,
+                    5 => false, //isStringAttachment
+                    6 => $disposition,
+                    7 => $name,
+                ];
+            }
         } catch (Exception $exc) {
             $this->setError($exc->getMessage());
             $this->edebug($exc->getMessage());
