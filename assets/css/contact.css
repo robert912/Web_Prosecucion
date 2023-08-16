@@ -190,3 +190,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .drag-area label {
+    padding: 40px 26px;
+  }
+}
