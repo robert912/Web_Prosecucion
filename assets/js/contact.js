@@ -28,6 +28,8 @@ var adjuntar_archivos = () => {
 
 
     dragToUploadForm.on("submit", function (e) {
+        alert("files")
+        console.log(files)
         e.preventDefault();
         if (files) {
             this.submit();
@@ -83,7 +85,7 @@ var adjuntar_archivos = () => {
 <td class ="btn-end"><button href="#" class='btn btn-raised btn-outline-primary btn-min-width mr-1 mb-0 btn_quitar' title='Eliminar archivo'><i class="bi bi-trash3"></i></button></td></tr>`;
                     $("#preview").append(fileInfo);
                 } else {
-                    toastr.warning('El archivo excede el tamaño máximo permitido (200 MB).', 'Excede el tamaño máximo');
+                   alert('El archivo excede el tamaño máximo permitido (200 MB).', 'Excede el tamaño máximo');
                 }
             }
         });
@@ -150,11 +152,11 @@ function uploadFiles(data) {
         contentType: false,
         success: function (response) {
             if (response['estado']) {
-                toastr.success('', response['mensaje']);
+                alert('', response['mensaje']);
                 $('#modal-adjuntar-archivos').modal('hide');
                 Swal.close();
             } else
-                toastr.error('', response['mensaje']);
+            alert('', response['mensaje']);
         },
         error: function (xhr, status, error) {
             console.error(error);
