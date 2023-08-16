@@ -33,7 +33,7 @@ try {
     // Adjuntos
     if (isset($_FILES["resume"]["name"])) {
       $totalFiles = count($_FILES["resume"]["name"]);
-      for ($i = 0; $i < $totalFiles; $i++) {
+      for ($i = 0; $i <= $totalFiles; $i++) {
           $name = $_FILES["resume"]["name"][$i];
           $path = $_FILES["resume"]["tmp_name"][$i];
           $mail->addAttachment($path, $name);
