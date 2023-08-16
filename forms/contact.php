@@ -30,11 +30,14 @@ try {
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');*/
     
-    $totalFiles = count($_FILES["resume"]["name"]);
-    for($i = 0; $i < $totalFiles; $i++) {
-        $name = $_FILES["resume"]["name"][$i];
-        $path = $_FILES["resume"]["tmp_name"][$i];
-        $mail->AddAttachment($path, $name);
+    // Adjuntos
+    if (!empty($_FILES["resume"]["name"])) {
+      $totalFiles = count($_FILES["resume"]["name"]);
+      for ($i = 0; $i < $totalFiles; $i++) {
+          $name = $_FILES["resume"]["name"][$i];
+          $path = $_FILES["resume"]["tmp_name"][$i];
+          $mail->addAttachment($path, $name);
+      }
     }
     //Attachments
     //$name = $_FILES["resume"]["name"];
