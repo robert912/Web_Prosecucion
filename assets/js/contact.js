@@ -36,14 +36,13 @@ var adjuntar_archivos = () => {
 
     dropArea.on("drop", function (event) {
         event.preventDefault();
-        const files = event.dataTransfer.files;
-        inputFile.files = files;//event.originalEvent.dataTransfer.files;
+        const files = event.originalEvent.dataTransfer.files;
+        inputFile[0].files = files;
         showFile(files);
     });
 
 
     function showFile(files) {
-        console.log( files)
         $("#preview").html("")
         $.each(files, function (index, file) {
             let fileSize = file.size;
