@@ -72,6 +72,7 @@ var adjuntar_archivos = () => {
 
 
     function showFile(files) {
+        $("#preview").html('')
         $.each(files, function (index, file) {
             let fileSize = file.size;
             const maxSize = 200 * 1024 * 1024;
