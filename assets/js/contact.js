@@ -5,7 +5,7 @@ $( document ).ready( function () {
 var adjuntar_archivos = () => {
     const dropArea = $(".drag-area");
     const dragText = dropArea.find("label");
-    const inputFile = dropArea.find("#inputFile");
+    const inputFile = $("#inputFile");
 
     dropArea.on("mouseenter", function () {
         dropArea.addClass("active");
@@ -36,13 +36,14 @@ var adjuntar_archivos = () => {
 
     dropArea.on("drop", function (event) {
         event.preventDefault();
-        const files = event.originalEvent.dataTransfer.files;
-        inputFile.files = files;
+        const files = event.dataTransfer.files;
+        inputFile.files = files;//event.originalEvent.dataTransfer.files;
         showFile(files);
     });
 
 
     function showFile(files) {
+        console.log( files)
         $("#preview").html("")
         $.each(files, function (index, file) {
             let fileSize = file.size;
