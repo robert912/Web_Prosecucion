@@ -8,9 +8,9 @@ var adjuntar_archivos = () => {
     const inputFile = $("#inputFile");
 
     $("#myForm").submit(function (event) {
-        const inputFile = $("#inputFile");
-        
+        console.log("ingresa al enviar");    
         if (inputFile[0].files.length === 0) {
+            console.log(inputFile[0].files.length);
             // Si no hay archivos seleccionados, elimina el campo del formulario
             inputFile.remove();
         }
