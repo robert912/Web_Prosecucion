@@ -25,15 +25,24 @@ try {
     //Destinatarios
     $mail->setFrom($_POST['email'], $_POST['name']);
     $mail->addAddress($receiving_email_address);    //Add a recipient
-    $mail->addAddress('comunicaciones.dimin@usach.cl');              //Name is optional
+    //$mail->addAddress('comunicaciones.dimin@usach.cl');              //Name is optional
     /*$mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');*/
-
+    
+    $totalFiles = 0;
+    if(isset($_FILES["resume"]["name"])) {
+      $totalFiles = count($_FILES["resume"]["name"]);
+    }
+    for($i = 0; $i < $totalFiles; $i++) {
+        $name = $_FILES["resume"]["name"][$i];
+        $path = $_FILES["resume"]["tmp_name"][$i];
+        $mail->AddAttachment($path, $name);
+    }
     //Attachments
-    $name = $_FILES["resume"]["name"];
-    $path = $_FILES["resume"]["tmp_name"];
-    $mail->AddAttachment($path, $name);
+    //$name = $_FILES["resume"]["name"];
+    //$path = $_FILES["resume"]["tmp_name"];
+    //$mail->AddAttachment($path, $name);
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
