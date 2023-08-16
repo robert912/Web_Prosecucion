@@ -7,16 +7,6 @@ var adjuntar_archivos = () => {
     const dragText = dropArea.find("label");
     const inputFile = $("#inputFile");
 
-    $("#myForm").submit(function (event) {
-        console.log("ingresa al enviar");   
-        const inputFile = $("#inputFile"); 
-        if (inputFile[0].files.length === 0) {
-            console.log(inputFile[0].files.length);
-            // Si no hay archivos seleccionados, elimina el campo del formulario
-            inputFile.remove();
-        }
-    });
-
     dropArea.on("mouseenter", function () {
         dropArea.addClass("active");
     });
