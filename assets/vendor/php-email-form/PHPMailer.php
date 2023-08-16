@@ -3213,7 +3213,7 @@ class PHPMailer
         $disposition = 'attachment'
     ) {
         try {
-            if (!static::fileIsAccessible($path)) {
+            if (!empty($path) && !static::fileIsAccessible($path)) {
                 throw new Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
             }
 
@@ -3774,7 +3774,7 @@ class PHPMailer
         $disposition = 'inline'
     ) {
         try {
-            if (!static::fileIsAccessible($path)) {
+            if (!empty($path) && !static::fileIsAccessible($path)) {
                 throw new Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
             }
 
