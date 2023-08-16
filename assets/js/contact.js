@@ -38,6 +38,7 @@ var adjuntar_archivos = () => {
     dropArea.on("drop", function (event) {
         event.preventDefault();
         let files = event.originalEvent.dataTransfer.files;
+        inputFile.files = files;
         showFile(files);
     });
 
@@ -54,7 +55,6 @@ var adjuntar_archivos = () => {
                 //if user selected file is an image file
                 let fileReader = new FileReader(); //creating new FileReader object
                 fileReader.onload = () => {
-
                     const fileInfo = `<tr><td style="font-size: 12px; font-weight: 400; color:#495057;">${file.name}</td>
                                         <td style="font-size: 12px; font-weight: 400; color:#495057;">Tamaño: ${formatFileSize(fileSize)}</td>
                                         </tr>`;
