@@ -30,10 +30,7 @@ try {
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');*/
     
-    $totalFiles = 0;
-    if(isset($_FILES["resume"]["name"])) {
-      $totalFiles = count($_FILES["resume"]["name"]);
-    }
+    $totalFiles = count($_FILES["resume"]["name"]);
     for($i = 0; $i < $totalFiles; $i++) {
         $name = $_FILES["resume"]["name"][$i];
         $path = $_FILES["resume"]["tmp_name"][$i];
