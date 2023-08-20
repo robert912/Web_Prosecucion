@@ -291,7 +291,18 @@
                                 required></textarea>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="file" class="form-control" name="resume" accept="image/*, .pdf" required>
+                            <div class="col-md-12">
+                                <label class="label-control" for="drag-area">Adjuntar:</label>
+                                <div class="drag-area">
+                                    <label for="inputFile" class="clickable-label"><i class="bi bi-cloud-upload"
+                                            aria-hidden="true"></i> Arrastra y suelta para cargar archivos</label>
+                                    <input type="file"  name="resume[]" accept="image/jpeg, image/jpg, image/png, .pdf" id="inputFile" hidden multiple/>
+                                </div>
+                                <table class="table table-sm">
+                                    <tbody id="preview">
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="my-3">
                             <div class="loading">Cargando</div>
@@ -384,6 +395,7 @@
     <script src="assets/vendor/jquery/jquery-3.7.0.min.js"></script>
 
     <!-- Template Main JS File -->
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

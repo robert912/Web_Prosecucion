@@ -919,3 +919,50 @@ section {
     text-align: center;
   }
 }
+
+/* modal adjuntar archivos paciente */
+
+.drag-area {
+  border: 2px dashed #ddd;
+  height: 140px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+
+.drag-area.active {
+  background-color: #b8d4fe;
+  color: black;
+  border: 2px dashed #618ac9;
+}
+
+
+.drag-area label {
+  font-size: 15;
+  color: #495057 !important;
+  font-weight: 500;
+  padding: 40px 271px;
+}
+
+.clickable-label {
+  cursor: pointer;
+}
+
+
+.clickable-label .bi-cloud-upload {
+  font-size: 40px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .drag-area label {
+    padding: 40px 26px;
+  }
+}
