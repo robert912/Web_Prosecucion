@@ -408,14 +408,18 @@ section {
   padding-bottom: 250px;
 }
 
+#hero .row {
+  padding-block: inherit;
+}
+
 #hero #img-flecha, #hero .btn-get-started{
   display: none;
 }
 
 @media (max-width: 992px) {
   #hero .container {
-    padding-top: 76px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 20px;
   }
 
   #hero #img-flecha, #hero .btn-get-started{
