@@ -7,7 +7,7 @@ require '../assets/vendor/php-email-form/PHPMailer.php';
 require '../assets/vendor/php-email-form/SMTP.php';
 
   // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'roberto.orellana.t@usach.cl';
+  $receiving_email_address = 'p.minas@usach.cl';
   $mail = new PHPMailer(true);
 
 try {

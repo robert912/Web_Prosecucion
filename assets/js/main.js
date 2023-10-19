@@ -103,7 +103,7 @@ $(document).ready(function(){
   
   /* Whatsapp */
   $(".whatsapp_flotante").click(function(e) {
-    fono = "56974331446";
+    fono = "56964825954";
     mensajePredeterminado = "Hola! Quisiera más información sobre Diplomados"
     e.preventDefault();
     var tab = window.open('https://api.whatsapp.com/send?phone='+fono+'&text='+mensajePredeterminado, '_blank');
