@@ -272,11 +272,14 @@
                 </div>
 
                 <div class="col-lg-8 mt-5 mt-lg-0">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form id="miFormulario" action="forms/contact.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data" onsubmit="return validarFormulario()">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
                                     required>
+                            </div>
+                            <div class="col-md-6 form-group d-none">
+                                <input type="text" name="validador" class="form-control" id="validador" placeholder="validador">
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Correo"
