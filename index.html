@@ -30,7 +30,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -313,7 +313,12 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
                         </div>
-                        <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+                        <div class="text-center">
+                            <button type="submit" class="g-recaptcha" 
+                            data-sitekey="reCAPTCHA_site_key" 
+                            data-callback='onSubmit' 
+                            data-action='submit'>Enviar mensaje</button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -82,6 +82,7 @@ function formatFileSize(bytes) {
 }
 
 function validarFormulario() {
+    alert("Form")
     // Obtenemos el valor del input
     var validador = document.getElementById('validador').value;
     // Verificamos si el mensaje está vacío
@@ -93,3 +94,22 @@ function validarFormulario() {
         return false;
     }
 }
+
+function onSubmit(token) {
+    alert("btn")
+    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
+    console.log(document.getElementById('name').value)
+    console.log(document.getElementById('validador').value)
+    console.log(document.getElementById('email').value)
+    console.log(document.getElementById('token').value)
+    document.getElementById("miFormulario").submit();
+}
+
+/*function onClick(e) {
+    e.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+          // Add your logic to submit to your backend server here.
+      });
+    });
+  }*/
