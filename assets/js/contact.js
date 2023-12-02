@@ -81,7 +81,7 @@ function formatFileSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
 
-function validarFormulario() {
+/*function validarFormulario() {
     alert("Form")
     // Obtenemos el valor del input
     var validador = document.getElementById('validador').value;
@@ -93,15 +93,10 @@ function validarFormulario() {
         // Evitamos que el formulario se envíe
         return false;
     }
-}
+}*/
 
 function onSubmit(token) {
-    alert("btn")
     $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
-    console.log(document.getElementById('name').value)
-    console.log(document.getElementById('validador').value)
-    console.log(document.getElementById('email').value)
-    console.log(document.getElementById('token').value)
     document.getElementById("miFormulario").submit();
 }
 

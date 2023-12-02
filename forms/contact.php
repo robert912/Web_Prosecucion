@@ -6,6 +6,8 @@ require '../assets/vendor/php-email-form/Exception.php';
 require '../assets/vendor/php-email-form/PHPMailer.php';
 require '../assets/vendor/php-email-form/SMTP.php';
 
+define('PRIVATE_KEY_RV3', '6LfjyiEpAAAAAL-oLH-JByg7InC3uo1Z1nbyHOuD');
+validate_recaptcha();
   // Replace contact@example.com with your real receiving email address
   $receiving_email_address = 'p.minas@usach.cl';
   $mail = new PHPMailer(true);
@@ -60,4 +62,24 @@ try {
 } catch (Exception $e) {
     echo "{$mail->ErrorInfo}";
 }
+
+function validate_recaptcha(){
+  $token = $_POST['token'];
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL,"https://www.google.com/recaptcha/api/siteverify");
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => PRIVATE_KEY_RV3, 'response' => $token)));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $response = curl_exec($ch);
+  curl_close($ch);
+  $arrResponse = json_decode($response, true);
+
+  // verify the response
+  if($arrResponse["success"] != '1' || $arrResponse["score"] < 0.5) {
+    echo "{$mail->ErrorInfo}";// wp_redirect( home_url("/contacto/")."?sent=-1" );
+    exit;
+  }
+}
+
 ?>
