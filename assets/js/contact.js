@@ -81,8 +81,8 @@ function formatFileSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
 
-/*function validarFormulario() {
-    alert("Form")
+function validarFormulario() {
+alert("Form")
     // Obtenemos el valor del input
     var validador = document.getElementById('validador').value;
     // Verificamos si el mensaje está vacío
@@ -93,11 +93,14 @@ function formatFileSize(bytes) {
         // Evitamos que el formulario se envíe
         return false;
     }
-}*/
+}
 
 function onSubmit(token) {
-    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
     document.getElementById("miFormulario").submit();
+}
+
+/*function onSubmit(token) {
+    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
 }
 
 /*function onClick(e) {

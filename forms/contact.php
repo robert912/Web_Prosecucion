@@ -13,21 +13,22 @@ validate_recaptcha();
   $mail = new PHPMailer(true);
 
 try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
+        //Server settings
+    $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
+    $mail->isSMTP();                                         //Send using SMTP
+    $mail->CharSet    = 'UTF-8';
     $mail->Host       = 'mail.dimin.cl';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'support@dimin.cl';                     //SMTP username
-    $mail->Password   = '{j+c+eB&VJFj';                               //SMTP password
+    $mail->SMTPAuth   = true;                                //Enable SMTP authentication
+    $mail->Username   = 'support@dimin.cl';                  //SMTP username
+    $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
     $mail->Port       = 587;
-    /*$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;*/            //Enable implicit TLS encryption
-   
+    /*$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;*/     //Enable implicit TLS encryption
+    
 
     //Destinatarios
     $mail->setFrom($_POST['email'], $_POST['name']);
-    $mail->addAddress($receiving_email_address);    //Add a recipient
-    $mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
+    #$mail->addAddress($receiving_email_address);    //Add a recipient
+    #$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
     $mail->addAddress('roberto.orellana.t@usach.cl');
     /*$mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
@@ -77,7 +78,8 @@ function validate_recaptcha(){
 
   // verify the response
   if($arrResponse["success"] != '1' || $arrResponse["score"] < 0.5) {
-    echo "{$mail->ErrorInfo}";// wp_redirect( home_url("/contacto/")."?sent=-1" );
+    echo "Message send for Bot";
+    #echo "{$mail->ErrorInfo}";// wp_redirect( home_url("/contacto/")."?sent=-1" );
     exit;
   }
 }
