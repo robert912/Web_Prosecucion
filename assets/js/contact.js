@@ -81,15 +81,6 @@ function formatFileSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
 
-function onSubmit(token) {
-    // Llama a la función de validación antes de enviar el formulario
-    if (validarFormulario()) {
-        document.getElementById("miFormulario").submit();
-    } else {
-        alert('Error de validación. Por favor, completa todos los campos obligatorios.');
-    };
-}
-
 function validarFormulario() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
@@ -105,4 +96,13 @@ function validarFormulario() {
     // Puedes agregar más validaciones según tus necesidades
     // Si todos los campos están completos, puedes permitir que el formulario se envíe
     return true;
+}
+
+function onSubmit(token) {
+    // Llama a la función de validación antes de enviar el formulario
+    if (validarFormulario()) {
+        document.getElementById("miFormulario").submit();
+    } else {
+        alert('Error de validación. Por favor, completa todos los campos obligatorios.');
+    };
 }
