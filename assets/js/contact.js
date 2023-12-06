@@ -86,14 +86,19 @@ function onSubmit(token) {
 }
 
 function validarFormulario() {
-    // Obtenemos el valor del input
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var inputFile = document.getElementById('inputFile').value;
     var validador = document.getElementById('validador').value;
-    // Verificamos si el mensaje está vacío
-    if (validador === "") {
-        // Permitimos que el formulario se envíe
-        return true;
-    } else {
-        // Evitamos que el formulario se envíe
-        return false;
+
+    // Verificar si los campos obligatorios están completos
+    if (name.trim() === '' || email.trim() === '' || subject.trim() === '' || message.trim() === '' || inputFile.trim() === '' || validador != "") {
+      alert('Por favor, completa todos los campos obligatorios.');
+      return false; // Evitar el envío del formulario
     }
+    // Puedes agregar más validaciones según tus necesidades
+    // Si todos los campos están completos, puedes permitir que el formulario se envíe
+    return true;
 }
