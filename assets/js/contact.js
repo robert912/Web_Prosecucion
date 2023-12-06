@@ -96,6 +96,7 @@ alert("Form")
 }
 
 function onSubmit(token) {
+    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
     document.getElementById("miFormulario").submit();
 }
 

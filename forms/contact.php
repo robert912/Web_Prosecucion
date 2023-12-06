@@ -78,6 +78,7 @@ function validate_recaptcha(){
 
   // verify the response
   if($arrResponse["success"] != '1' || $arrResponse["score"] < 0.5) {
+    echo "<script>console.log('Console: " . $arrResponse . "' );</script>";
     echo "Message send for Bot {$arrResponse['success']} and {$arrResponse['score']} = {$token}";
     #echo "{$mail->ErrorInfo}";// wp_redirect( home_url("/contacto/")."?sent=-1" );
     exit;
