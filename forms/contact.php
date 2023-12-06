@@ -93,7 +93,7 @@ try {
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
         } 
     }else{ 
-        $statusMsg = 'Something went wrong, please try again.'; 
+        $statusMsg = 'Something went wrong, please try again.';
     }
     echo "{$mail->statusMsg}";
 } catch (Exception $e) {

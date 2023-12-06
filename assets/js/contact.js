@@ -80,34 +80,3 @@ function formatFileSize(bytes) {
     const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
-
-/*function validarFormulario() {
-    // Obtenemos el valor del input
-    var validador = document.getElementById('validador').value;
-    // Verificamos si el mensaje está vacío
-    if (validador === "") {
-        // Permitimos que el formulario se envíe
-        return true;
-    } else {
-        // Evitamos que el formulario se envíe
-        return false;
-    }
-}
-
-function onSubmit(token) {
-    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
-    document.getElementById("miFormulario").submit();
-}
-
-/*function onSubmit(token) {
-    $('#miFormulario').prepend('<input type="hidden" id="token" name="token" value="' + token + '">');
-}
-
-/*function onClick(e) {
-    e.preventDefault();
-    grecaptcha.ready(function() {
-      grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
-          // Add your logic to submit to your backend server here.
-      });
-    });
-  }*/
