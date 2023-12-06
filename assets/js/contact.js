@@ -84,3 +84,16 @@ function formatFileSize(bytes) {
 function onSubmit(token) {
     document.getElementById("miFormulario").submit();
 }
+
+function validarFormulario() {
+    // Obtenemos el valor del input
+    var validador = document.getElementById('validador').value;
+    // Verificamos si el mensaje está vacío
+    if (validador === "") {
+        // Permitimos que el formulario se envíe
+        return true;
+    } else {
+        // Evitamos que el formulario se envíe
+        return false;
+    }
+}
