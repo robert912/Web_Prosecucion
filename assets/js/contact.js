@@ -81,8 +81,7 @@ function formatFileSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
 
-function validarFormulario() {
-alert("Form")
+/*function validarFormulario() {
     // Obtenemos el valor del input
     var validador = document.getElementById('validador').value;
     // Verificamos si el mensaje está vacío

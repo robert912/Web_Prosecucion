@@ -32,8 +32,14 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/contact.css" rel="stylesheet">
 
+
   <!--script src="https://www.google.com/recaptcha/api.js?render=6LfjyiEpAAAAAKRdZ9fPNMHhe-BqY0oSLSUU2d-g"></script-->
   <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+        document.getElementById("miFormulario").submit();
+    }
+    </script>
 </head>
 
 <body>
@@ -121,7 +127,7 @@
             <div class="section-title">
               <h2>Contacto</h2>
             </div>
-            <form id="miFormulario" action="forms/contact.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+            <form id="miFormulario" action="forms/contact.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
