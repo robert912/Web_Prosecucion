@@ -88,7 +88,9 @@ try {
             $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
             $mail->send();
-            header("Location: ../contact.html");
+            #header("Location: ../contact.html");
+            $output = "<div id='phppot-message' class='success'>Feedback received.</div>";
+            print $output;
             exit;
             //echo 'Message has been sent'; 
         }else{ 
