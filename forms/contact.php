@@ -44,7 +44,6 @@ try {
         // If the reCAPTCHA API response is valid 
         if(!empty($responseData) && $responseData->success){ 
             // Send email notification to the site admin 
-            //Server settings
             $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
             $mail->isSMTP();                                         //Send using SMTP
             $mail->CharSet    = 'UTF-8';
@@ -53,7 +52,7 @@ try {
             $mail->Username   = 'support@dimin.cl';                  //SMTP username
             $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
             $mail->Port       = 587;
-            $mail->SMTPSecure = 'tls';     //Enable implicit TLS encryption
+            $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
 
             //Destinatarios
             $mail->setFrom($_POST['email'], $_POST['name']);
