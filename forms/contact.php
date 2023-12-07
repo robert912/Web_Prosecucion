@@ -101,7 +101,7 @@ try {
     }
     echo "{$mail->statusMsg}";
 } catch (Exception $e) {
-    echo "{$mail->ErrorInfo}";
+    echo "{$mail->statusMsg}";
 }
 
 ?>
