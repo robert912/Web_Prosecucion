@@ -80,11 +80,3 @@ function formatFileSize(bytes) {
     const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
-
-$(".sent-message").on("change", function () {
-    // Verificar si el div está oculto (display: none)
-    if ($(".sent-message").css("display") === "none") {
-        // Desactivar el botón
-        $("#btnSubmit").prop("disabled", true);
-    }
-});
