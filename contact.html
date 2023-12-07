@@ -125,9 +125,6 @@
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                 </div>
-                <div class="col-md-6 form-group d-none">
-                  <input type="text" name="validador" class="form-control" id="validador" placeholder="validador">
-                </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Correo" required>
                 </div>
@@ -152,11 +149,13 @@
                   </table>
                 </div>
               </div>
-              <div style="display: flex; justify-content: space-around; align-items: center;">
-                <div class="text-center">
-                  <button type="submit">Enviar mensaje</button>
+              <div class="row">
+                <div class="text-center col-md-6  pt-3 order-2 order-md-1">
+                    <button type="submit">Enviar mensaje</button>
                 </div>
-                <div class="g-recaptcha" data-sitekey="6LdJuikpAAAAAE6XysQAWtbknMujnR0hZWEQZ8HN"></div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center order-1 order-md-2">
+                    <div class="g-recaptcha" data-sitekey="6LdJuikpAAAAAE6XysQAWtbknMujnR0hZWEQZ8HN"></div>
+                </div>
               </div>
               <div class="my-3">
                 <div class="loading">Cargando</div>
