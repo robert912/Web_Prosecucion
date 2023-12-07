@@ -6,7 +6,7 @@ require '../assets/vendor/php-email-form/Exception.php';
 require '../assets/vendor/php-email-form/PHPMailer.php';
 require '../assets/vendor/php-email-form/SMTP.php';
 
-$secretKey = '6LfjyiEpAAAAAL-oLH-JByg7InC3uo1Z1nbyHOuD';
+$secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
 
 // Replace contact@example.com with your real receiving email address
 $receiving_email_address = 'p.minas@usach.cl';
@@ -87,11 +87,11 @@ try {
             $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
             $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-            $mail->send();
+            echo $mail->send();
             #header("Location: ../contact.html");
-            $output = "<div id='phppot-message' class='success'>Feedback received.</div>";
-            print $output;
-            exit;
+            #$output = "<div id='phppot-message' class='success'>Feedback received.</div>";
+            #print $output;
+            #exit;
             //echo 'Message has been sent'; 
         }else{ 
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
