@@ -53,7 +53,7 @@ try {
             $mail->Username   = 'support@dimin.cl';                  //SMTP username
             $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
             $mail->Port       = 587;
-            /*$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;*/     //Enable implicit TLS encryption
+            $mail->SMTPSecure = 'ssl';     //Enable implicit TLS encryption
 
             //Destinatarios
             $mail->setFrom($_POST['email'], $_POST['name']);
