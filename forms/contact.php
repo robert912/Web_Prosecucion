@@ -99,9 +99,9 @@ try {
     }else{ 
         $statusMsg = 'Something went wrong, please try again.';
     }
-    echo "{$mail->statusMsg}";
+    echo "{$mail->$statusMsg}";
 } catch (Exception $e) {
-    echo "{$mail->statusMsg}";
+    echo "{$mail->ErrorInfo}";
 }
 
 ?>
