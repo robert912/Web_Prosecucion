@@ -80,16 +80,3 @@ function formatFileSize(bytes) {
     const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + " " + sizes[i];
 }
-
-function validarFormulario() {
-    // Obtenemos el valor del input
-    var validador = document.getElementById('validador').value;
-    // Verificamos si el mensaje está vacío
-    if (validador === "") {
-        // Permitimos que el formulario se envíe
-        return true;
-    } else {
-        // Evitamos que el formulario se envíe
-        return false;
-    }
-}
