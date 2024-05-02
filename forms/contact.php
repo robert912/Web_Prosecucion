@@ -56,9 +56,10 @@ try {
 
             //Destinatarios
             $mail->setFrom($_POST['email'], $_POST['name']);
-            #$mail->addAddress($receiving_email_address);    //Add a recipient
-            #$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
+            $mail->addAddress($receiving_email_address);    //Add a recipient
+            $mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
             $mail->addAddress('roberto.orellana.t@usach.cl');
+            $mail->addAddress('patricia.munoz.l@usach.cl');
             /*$mail->addReplyTo('info@example.com', 'Information');
             $mail->addCC('cc@example.com');
             $mail->addBCC('bcc@example.com');*/
