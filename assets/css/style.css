@@ -387,7 +387,7 @@ section {
   background: url("../img/Landing_Page_pc.png") top center;
   background-size: cover;
   position: center;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   justify-content: canter;
   align-items: center;
