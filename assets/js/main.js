@@ -100,7 +100,9 @@
 
 
 $(document).ready(function(){
-  
+  /* Modal informativo */
+  $('#infoModal').modal('show');
+
   /* Whatsapp */
   $(".whatsapp_flotante").click(function(e) {
     fono = "56964825954";
@@ -119,5 +121,10 @@ $(document).ready(function(){
     // Cambiar la ubicación del navegador a la URL deseada
     window.location.href = "contact.html";
   });
+});
+
+// Redirigir al hacer clic en el modal
+$('.modal-content-custom').on('click', function() {
+  window.location.href = 'carrera_diplomado_industria_min.html'; // Reemplaza con la URL de destino
 });
   
