@@ -101,7 +101,7 @@
 
 $(document).ready(function(){
   /* Modal informativo */
-  $('#infoModal').modal('show');
+  //$('#infoModal').modal('show');
 
   /* Whatsapp */
   $(".whatsapp_flotante").click(function(e) {
