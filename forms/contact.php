@@ -52,7 +52,7 @@ try {
             $mail->SMTPAuth   = true;                                //Enable SMTP authentication
             $mail->Username   = 'support@dimin.cl';                  //SMTP username
             $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
-            $mail->Port       = 587;
+            $mail->Port       =  465;
             $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
 
             //Destinatarios
