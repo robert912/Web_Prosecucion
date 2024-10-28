@@ -9,7 +9,8 @@ require '../assets/vendor/php-email-form/SMTP.php';
 $secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
 
 // Replace contact@example.com with your real receiving email address
-$receiving_email_address = 'p.minas@usach.cl';
+//$receiving_email_address = 'p.minas@usach.cl';
+$receiving_email_address = 'roberto.orellana.t@usach.cl';
 $mail = new PHPMailer(true);
 
 try {
@@ -42,7 +43,7 @@ try {
         $responseData = json_decode($response); 
 
         // If the reCAPTCHA API response is valid 
-        if(!empty($responseData) && $responseData->success){ 
+        //if(!empty($responseData) && $responseData->success){ 
             // Send email notification to the site admin 
             $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
             $mail->isSMTP();                                         //Send using SMTP
@@ -57,9 +58,9 @@ try {
             //Destinatarios
             $mail->setFrom($_POST['email'], $_POST['name']);
             $mail->addAddress($receiving_email_address);    //Add a recipient
-            $mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
-            $mail->addAddress('roberto.orellana.t@usach.cl');
-            $mail->addAddress('patricia.munoz.l@usach.cl');
+            //$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
+            //$mail->addAddress('roberto.orellana.t@usach.cl');
+            //$mail->addAddress('patricia.munoz.l@usach.cl');
             /*$mail->addReplyTo('info@example.com', 'Information');
             $mail->addCC('cc@example.com');
             $mail->addBCC('bcc@example.com');*/
@@ -96,9 +97,9 @@ try {
         }else{ 
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
         } 
-    }else{ 
-        $statusMsg = 'Something went wrong, please try again.';
-    }
+    //}else{ 
+    //    $statusMsg = 'Something went wrong, please try again.';
+    //}
     echo "{$mail->$statusMsg}";
 } catch (Exception $e) {
     echo "{$mail->ErrorInfo}";
