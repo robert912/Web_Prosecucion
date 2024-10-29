@@ -6,6 +6,9 @@ require '../assets/vendor/php-email-form/Exception.php';
 require '../assets/vendor/php-email-form/PHPMailer.php';
 require '../assets/vendor/php-email-form/SMTP.php';
 
+// Mensaje de depuración inicial
+echo "Script PHP cargado correctamente.<br>";
+
 $secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
 
 // Replace contact@example.com with your real receiving email address
@@ -14,7 +17,8 @@ $receiving_email_address = 'roberto.orellana.t@usach.cl';
 $mail = new PHPMailer(true);
 
 try {
-    if(!empty($_POST['g-recaptcha-response'])){ 
+    if(!empty($_POST['g-recaptcha-response'])){
+        echo "reCAPTCHA verificado.<br>";
         // Google reCAPTCHA verification API Request 
         $api_url = 'https://www.google.com/recaptcha/api/siteverify'; 
         $resq_data = array( 
@@ -40,10 +44,10 @@ try {
         curl_close($ch); 
 
         // Decode JSON data of API response in array 
-        $responseData = json_decode($response); 
-
-        // If the reCAPTCHA API response is valid 
-        if(!empty($responseData) && $responseData->success){ 
+        $responseData = json_decode($response);
+        // Comprobando la respuesta de reCAPTCHA 
+        if(!empty($responseData) && $responseData->success){
+            echo "reCAPTCHA verificado con éxito. Procediendo a enviar el correo.<br>";
             // Send email notification to the site admin 
             $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
             $mail->isSMTP();                                         //Send using SMTP
@@ -52,10 +56,10 @@ try {
             $mail->SMTPAuth   = true;                                //Enable SMTP authentication
             $mail->Username   = 'support@dimin.cl';                  //SMTP username
             $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
-            $mail->Port       =  465;
+            $mail->Port       =  587;
             $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
 
-            //Destinatarios
+            // Configuración de remitente y destinatario
             $mail->setFrom($_POST['email'], $_POST['name']);
             $mail->addAddress($receiving_email_address);    //Add a recipient
             //$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
@@ -65,7 +69,7 @@ try {
             $mail->addCC('cc@example.com');
             $mail->addBCC('bcc@example.com');*/
             
-            // Adjuntos
+            // Adjuntos (si hay archivos)
             if (isset($_FILES["resume"]["name"])) {
                 $totalFiles = count($_FILES["resume"]["name"]);
                 for ($i = 0; $i < $totalFiles; $i++) {
@@ -79,8 +83,8 @@ try {
             //$path = $_FILES["resume"]["tmp_name"];
             //$mail->AddAttachment($path, $name);
 
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
+            // Contenido del correo
+            $mail->isHTML(true); //Set email format to HTML
             $mail->Subject = "Prosecucion de Estudios - {$_POST['subject']}";
             $mail->Body = file_get_contents("../template/template_correo_form.html");
             $mail->Body = str_replace("nombreForm", $_POST['name'], $mail->Body);
@@ -88,7 +92,11 @@ try {
             $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
             $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-            echo $mail->send();
+            if ($mail->send()) {
+                echo "El mensaje ha sido enviado correctamente.<br>";
+            } else {
+                echo "Error al enviar el mensaje.<br>";
+            }
             #header("Location: ../contact.html");
             #$output = "<div id='phppot-message' class='success'>Feedback received.</div>";
             #print $output;
@@ -96,8 +104,8 @@ try {
             //echo 'Message has been sent'; 
         }else{ 
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
-        } 
-    }else{ 
+        }
+    }else{
         $statusMsg = 'Something went wrong, please try again.';
     }
     echo "{$mail->$statusMsg}";
