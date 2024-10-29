@@ -26,6 +26,42 @@ try {
             'response' => $_POST['g-recaptcha-response'], 
             'remoteip' => $_SERVER['REMOTE_ADDR']
         ); 
+        $ch = curl_init(); 
+        curl_setopt_array($ch, array( 
+            CURLOPT_URL => $api_url, 
+            CURLOPT_POST => true, 
+            CURLOPT_RETURNTRANSFER => true, 
+            CURLOPT_POSTFIELDS => $resq_data, 
+            CURLOPT_SSL_VERIFYPEER => false 
+        )); 
+
+        $response = curl_exec($ch); 
+        
+        if ($response === false) { 
+            $api_error = curl_error($ch);
+            echo "cURL Error: " . $api_error . "<br>";
+        } else {
+            echo "Raw API Response: " . $response . "<br>";
+            
+            $responseData = json_decode($response); 
+            
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                echo "JSON Decode Error: " . json_last_error_msg() . "<br>";
+            } else {
+                if(!empty($responseData) && $responseData->success){
+                    echo "reCAPTCHA verified successfully. Proceeding to send email.<br>";
+                    // ... (rest of the email sending code)
+                } else { 
+                    $statusMsg = 'The reCAPTCHA verification failed. API Response: ' . print_r($responseData, true);
+                    echo $statusMsg . "<br>";
+                }
+            }
+        }
+        
+        curl_close($ch); 
+    } else { 
+        echo "No reCAPTCHA response received.<br>";
+    }
 
         $curlConfig = array( 
             CURLOPT_URL => $api_url, 
@@ -106,9 +142,9 @@ try {
         }else{ 
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
         } 
-    }else{ 
-        $statusMsg = 'Something went wrong, please try again.';
-    }
+    //}else{ 
+    //    $statusMsg = 'Something went wrong, please try again.';
+    //}
     echo "{$mail->$statusMsg}";
 } catch (Exception $e) {
     echo "{$mail->$api_error}";
