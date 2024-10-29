@@ -119,5 +119,5 @@ try {
     }
     echo "{$mail->$statusMsg}";
 } catch (Exception $e) {
-    echo "{$mail->$api_error}";
+    echo "{$mail->ErrorInfo}";
 }
