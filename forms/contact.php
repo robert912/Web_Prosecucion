@@ -14,6 +14,7 @@ $secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
 // Replace contact@example.com with your real receiving email address
 //$receiving_email_address = 'p.minas@usach.cl';
 $receiving_email_address = 'roberto.orellana.t@usach.cl';
+$from_email_address = 'support@dimin.cl';
 $mail = new PHPMailer(true);
 
 try {
@@ -62,7 +63,7 @@ try {
                     $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
 
                     // Configuración de remitente y destinatario
-                    $mail->setFrom($_POST['email'], $_POST['name']);
+                    $mail->setFrom($from_email_address, $_POST['name']);
                     $mail->addAddress($receiving_email_address);    //Add a recipient
                     $mail->addAddress('test-7kshgg9ze@srv1.mail-tester.com');    //Add a recipient
                     
