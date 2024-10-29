@@ -94,16 +94,13 @@ try {
                     $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
                     $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-                    if ($mail->send()) {
-                        echo "El mensaje ha sido enviado correctamente.<br>";
-                    } else {
-                        echo "Error al enviar el mensaje.<br>";
-                    }
+                    $mail->send();
+                    echo "Message has been sent";
                     #header("Location: ../contact.html");
                     #$output = "<div id='phppot-message' class='success'>Feedback received.</div>";
                     #print $output;
                     #exit;
-                    //echo 'Message has been sent'; 
+                    echo 'Message has been sent'; 
                 } else { 
                     $statusMsg = 'The reCAPTCHA verification failed. API Response: ' . print_r($responseData, true);
                     echo $statusMsg . "<br>";
