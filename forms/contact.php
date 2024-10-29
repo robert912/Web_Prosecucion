@@ -22,7 +22,7 @@ if (isset($_POST['email'], $_POST['name'], $_POST['subject'], $_POST['message'])
         $mail->SMTPAuth   = true;
         $mail->Username   = 'support@dimin.cl';
         $mail->Password   = '{j+c+eB&VJFj';
-        $mail->Port       = 465;
+        $mail->Port       = 587;
         $mail->SMTPSecure = 'tls';
 
         // Configuración de remitente y destinatario
@@ -48,11 +48,7 @@ if (isset($_POST['email'], $_POST['name'], $_POST['subject'], $_POST['message'])
         $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
         $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-        if ($mail->send()) {
-            echo "El mensaje ha sido enviado correctamente.<br>";
-        } else {
-            echo "Error al enviar el mensaje.<br>";
-        }
+        $mail->send();
     } catch (Exception $e) {
         echo "Error en el envío de correo: {$mail->ErrorInfo}";
     }
