@@ -43,7 +43,7 @@ try {
         $responseData = json_decode($response); 
 
         // If the reCAPTCHA API response is valid 
-        //if(!empty($responseData) && $responseData->success){ 
+        if(!empty($responseData) && $responseData->success){ 
             // Send email notification to the site admin 
             $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
             $mail->isSMTP();                                         //Send using SMTP
@@ -97,9 +97,9 @@ try {
         }else{ 
             $statusMsg = !empty($api_error)?$api_error:'The reCAPTCHA verification failed, please try again.'; 
         } 
-    //}else{ 
-    //    $statusMsg = 'Something went wrong, please try again.';
-    //}
+    }else{ 
+        $statusMsg = 'Something went wrong, please try again.';
+    }
     echo "{$mail->$statusMsg}";
 } catch (Exception $e) {
     echo "{$mail->ErrorInfo}";

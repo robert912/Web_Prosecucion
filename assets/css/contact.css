@@ -92,6 +92,11 @@
   display: none;
 }
 
+.contact-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
 @media (max-width: 992px) {
   .contact .section-title {
     display: block;

@@ -751,6 +751,11 @@ section {
   display: block;
 }
 
+.contact-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
 @media (max-width: 992px) {
   .contact iframe {
     display: block;
