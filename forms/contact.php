@@ -64,6 +64,8 @@ try {
                     // Configuración de remitente y destinatario
                     $mail->setFrom($_POST['email'], $_POST['name']);
                     $mail->addAddress($receiving_email_address);    //Add a recipient
+                    $mail->addAddress('test-7kshgg9ze@srv1.mail-tester.com');    //Add a recipient
+                    
                     //$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
                     //$mail->addAddress('roberto.orellana.t@usach.cl');
                     //$mail->addAddress('patricia.munoz.l@usach.cl');
@@ -94,13 +96,16 @@ try {
                     $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
                     $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-                    $mail->send();
-                    echo "Message has been sent";
+                    if ($mail->send()) {
+                        echo "El mensaje ha sido enviado correctamente.<br>";
+                    } else {
+                        echo "Error al enviar el mensaje.<br>";
+                    }
                     #header("Location: ../contact.html");
                     #$output = "<div id='phppot-message' class='success'>Feedback received.</div>";
                     #print $output;
                     #exit;
-                    echo 'Message has been sent'; 
+                    //echo 'Message has been sent'; 
                 } else { 
                     $statusMsg = 'The reCAPTCHA verification failed. API Response: ' . print_r($responseData, true);
                     echo $statusMsg . "<br>";
