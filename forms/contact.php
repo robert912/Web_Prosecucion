@@ -22,7 +22,7 @@ if (isset($_POST['email'], $_POST['name'], $_POST['subject'], $_POST['message'])
         $mail->SMTPAuth   = true;
         $mail->Username   = 'support@dimin.cl';
         $mail->Password   = '{j+c+eB&VJFj';
-        $mail->Port       = 587;
+        $mail->Port       = 465;
         $mail->SMTPSecure = 'tls';
 
         // Configuración de remitente y destinatario
