@@ -7,19 +7,18 @@ require '../assets/vendor/php-email-form/PHPMailer.php';
 require '../assets/vendor/php-email-form/SMTP.php';
 
 // Mensaje de depuración inicial
-echo "Script PHP cargado correctamente.<br>";
+//echo "Script PHP cargado correctamente.<br>";
 
 $secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
 
 // Replace contact@example.com with your real receiving email address
 //$receiving_email_address = 'p.minas@usach.cl';
 $receiving_email_address = 'roberto.orellana.t@usach.cl';
-$from_email_address = 'support@dimin.cl';
 $mail = new PHPMailer(true);
 
 try {
     if(!empty($_POST['g-recaptcha-response'])){
-        echo "reCAPTCHA verificado.<br>";
+        //echo "reCAPTCHA verificado.<br>";
         // Google reCAPTCHA verification API Request 
         $api_url = 'https://www.google.com/recaptcha/api/siteverify'; 
         $resq_data = array( 
@@ -42,15 +41,14 @@ try {
             $api_error = curl_error($ch);
             echo "cURL Error: " . $api_error . "<br>";
         } else {
-            echo "Raw API Response: " . $response . "<br>";
-            
+            //echo "Raw API Response: " . $response . "<br>";
             $responseData = json_decode($response); 
             
             if (json_last_error() !== JSON_ERROR_NONE) {
                 echo "JSON Decode Error: " . json_last_error_msg() . "<br>";
             } else {
                 if(!empty($responseData) && $responseData->success){
-                    echo "reCAPTCHA verificado con éxito. Procediendo a enviar el correo.<br>";
+                    //echo "reCAPTCHA verificado con éxito. Procediendo a enviar el correo.<br>";
                     // Send email notification to the site admin 
                     $mail->SMTPDebug  = 0;                                   //Enable verbose debug output
                     $mail->isSMTP();                                         //Send using SMTP
@@ -108,7 +106,6 @@ try {
                 }
             }
         }
-        
         curl_close($ch); 
     } else { 
         echo "No reCAPTCHA response received.<br>";
