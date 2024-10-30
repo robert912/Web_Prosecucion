@@ -63,9 +63,8 @@ try {
                     $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
 
                     // Configuración de remitente y destinatario
-                    $mail->setFrom($from_email_address, $_POST['name']);
+                    $mail->setFrom($_POST['email'], $_POST['name']);
                     $mail->addAddress($receiving_email_address);    //Add a recipient
-                    $mail->addAddress('test-7kshgg9ze@srv1.mail-tester.com');    //Add a recipient
                     
                     //$mail->addAddress('comunicaciones.dimin@usach.cl');            //Name is optional
                     //$mail->addAddress('roberto.orellana.t@usach.cl');
@@ -97,11 +96,7 @@ try {
                     $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
                     $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 
-                    if ($mail->send()) {
-                        echo "El mensaje ha sido enviado correctamente.<br>";
-                    } else {
-                        echo "Error al enviar el mensaje.<br>";
-                    }
+                    echo $mail->send();
                     #header("Location: ../contact.html");
                     #$output = "<div id='phppot-message' class='success'>Feedback received.</div>";
                     #print $output;
