@@ -456,10 +456,6 @@ section {
   }
   
   #hero .imagen-centrada-superior {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
     width: 100%; /* Ajusta el tamaño de la imagen según tus necesidades */
   }
 }
@@ -962,4 +958,115 @@ section {
   .modal-content-custom {
     min-height: 200px;
   }
+}
+
+/*============================================================
+# Animaciones
+============================================================*/
+
+/*========= Giro 3D en el Eje Y (Rotación en Perspectiva) =========*/
+.giro-3d {
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  perspective: 500px; /* Añade profundidad */
+  transition: transform 1s ease-in-out;
+}
+
+.giro-3d:hover {
+  transform: rotateY(180deg); /* Gira la imagen en el eje Y */
+}
+
+/*========= Giro Oscilante con Rebote =========*/
+@keyframes reboteGiro {
+  0% { transform: rotate(0deg); }
+  70% { transform: rotate(360deg); }
+  90% { transform: rotate(340deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.giro-rebote:hover {
+  animation: reboteGiro 2s ease-out; /* Controla el tiempo para suavizar */
+}
+
+/*========= Giro en Espejo Continuo =========*/
+@keyframes espejoContinuo {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg) scaleX(-1); }
+  100% { transform: rotateY(360deg); }
+}
+
+.giro-espejo-continuo:hover {
+  animation: espejoContinuo 4s linear infinite; /* Ciclo continuo */
+}
+
+/*========= Giro en Zigzag o Cambiante =========*/
+@keyframes zigzagGiro {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(30deg); }
+  50% { transform: rotate(-30deg); }
+  75% { transform: rotate(20deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.giro-zigzag:hover {
+  animation: zigzagGiro 2s ease-in-out;
+}
+
+/*========= Giro con Zoom =========*/
+@keyframes giroZoom {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.giro-zoom:hover {
+  animation: giroZoom 3s ease-in-out;
+}
+
+/*========= girar la tarjeta =========*/
+/* Contenedor principal que permite el giro en 3D */
+.contenedor-3d {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 250px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 200px;
+  perspective: 1000px; /* Define la profundidad */
+}
+
+/* Contenedor interno que gira */
+.carta {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s; /* Controla la velocidad del giro */
+}
+
+/* Activamos el giro al pasar el mouse */
+.contenedor-3d:hover .carta {
+  transform: rotateY(180deg); /* Gira 180 grados en el eje Y */
+}
+
+/* Estilos para el frente y el reverso de la "carta" */
+.frente, .reverso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Oculta el reverso cuando está de espaldas */
+}
+
+/* Imagen frontal */
+.frente {
+  background-image: url('../img/DIMIN-2.png'); /* Imagen del frente */
+  background-size: cover;
+}
+
+/* Imagen trasera */
+.reverso {
+  background-image: url('../img/logos-dimin.png'); /* Imagen de atrás */
+  background-size: cover;
+  transform: rotateY(180deg); /* Rota el reverso para que esté "de espaldas" */
 }

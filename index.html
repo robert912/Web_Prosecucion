@@ -37,7 +37,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6GVHPGYS6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-X6GVHPGYS6');
     </script>
@@ -118,7 +118,12 @@
             <div class="container">
                 <img src="assets/img/DIMIN-opc.-blanco.png" alt="logo usach" class="imagen-centrada-superior">
             </div>
-
+            <div class="contenedor-3d">
+                <div class="carta">
+                  <div class="frente"></div>
+                  <div class="reverso"></div>
+                </div>
+              </div>
             <!--div class="full-width-div">
                 <img src="assets/img/logo_dimin_2.gif" class="imagen-centrada-superior" autoplay muted loop playsinline alt="Tu navegador no soporta el elemento de video.">
                 </img>
@@ -158,13 +163,22 @@
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-2 d-flex flex-column justify-content-between">
                     <div class="text-justify"><br>
                         <h5>
-                            Tiene como misión la formación integral de profesionales, creando y transmitiendo conocimiento del más alto nivel científico y tecnológico. Con un fuerte enfoque en el desarrollo de competencias técnicas, sociales, liderazgo y adaptabilidad, que generan propuestas innovadoras en las distintas áreas de la minería, dentro de un entorno de respeto mutuo, libertad de pensamiento y compromiso social.
+                            Tiene como misión la formación integral de profesionales, creando y transmitiendo
+                            conocimiento del más alto nivel científico y tecnológico. Con un fuerte enfoque en el
+                            desarrollo de competencias técnicas, sociales, liderazgo y adaptabilidad, que generan
+                            propuestas innovadoras en las distintas áreas de la minería, dentro de un entorno de respeto
+                            mutuo, libertad de pensamiento y compromiso social.
                         </h5><br>
                         <h5>
-                            En este contexto, sumándose a las opciones de Pregrado, surge el Programa de Prosecución de Estudios, cuyo modelo curricular de la Facultad de Ingeniería contempla una línea formativa común en las ingenierías civiles, que te permitirá desarrollar habilidades de innovación y emprendimiento de base científico-tecnológica.
+                            En este contexto, sumándose a las opciones de Pregrado, surge el Programa de Prosecución de
+                            Estudios, cuyo modelo curricular de la Facultad de Ingeniería contempla una línea formativa
+                            común en las ingenierías civiles, que te permitirá desarrollar habilidades de innovación y
+                            emprendimiento de base científico-tecnológica.
                         </h5><br>
                         <h5>
-                            Asimismo, el Departamento de Ingeniería en Minas de la Universidad de Santiago de Chile posee una sólida oferta de Postgrados con el Diplomado en Minería y el reciente Diplomado en Industria Minera.
+                            Asimismo, el Departamento de Ingeniería en Minas de la Universidad de Santiago de Chile
+                            posee una sólida oferta de Postgrados con el Diplomado en Minería y el reciente Diplomado en
+                            Industria Minera.
                         </h5><br><br>
                     </div>
                     <!-- <div class="text-center">
@@ -198,45 +212,46 @@
     <!-- ======= Popular Courses Section ======= -->
     <section id="popular-courses" class="courses">
         <div class="container" data-aos="fade-up">
-  
-          <div class="section-title">
-            <h2>Cursos</h2>
-            <p>Programas Destacados</p>
-          </div>
-  
-          <div class="row" data-aos="zoom-in" data-aos-delay="100">
-  
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="course-item">
-                    <img src="assets/img/Diplomado_INDUSTRIA_MINERA.jpg" class="img-fluid" alt="...">
-                    <div class="course-content">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4>Diplomado</h4>
-                        <p class="price">180 hrs</p>
-                        </div>
-        
-                        <h3><a href="carrera_diplomado_industria_min.html">Diplomado en Industria Minera - (Clases online y sincrónicas)</a></h3>
-                        <p>El Departamento de Ingeniería en #MinasUSACH inicia el proceso de postulaciones a la primera versión del “Diplomado en Industria Minera”. Programa 100% online.</p>
-                    </div>
-                </div>
-            </div> <!-- End Course Item-->
+            <div class="section-title">
+                <h2>Cursos</h2>
+                <p>Programas Destacados</p>
+            </div>
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-              <div class="course-item">
-                <img src="assets/img/portada_diplomado_en_mineria.jpg" class="img-fluid" alt="...">
-                <div class="course-content">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Diplomado</h4>
-                    <p class="price">480 hrs</p>
-                  </div>
-  
-                  <h3><a href="carrera_diplomado_mineria.html">Diplomado en Minería - (On-line)</a></h3>
-                  <p>El Departamento de Ingeniería en #MinasUSACH inicia proceso de postulaciones al “Diplomado en Minería USACH 2025: Herramientas 4.0- On Line“. Programa conducente a “Ingeniería Civil en Minas Vespertino“ para ingenieros/as de otras especialidades.</p>
-                </div>
-              </div>
-            </div> <!-- End Course Item-->
-  
-            <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="course-item">
+                        <img src="assets/img/Diplomado_INDUSTRIA_MINERA.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Diplomado</h4>
+                                <p class="price">180 hrs</p>
+                            </div>
+
+                            <h3><a href="carrera_diplomado_industria_min.html">Diplomado en Industria Minera - (Clases online y sincrónicas)</a></h3>
+                            <p>El Departamento de Ingeniería en #MinasUSACH inicia el proceso de postulaciones a la primera versión del “Diplomado en Industria Minera”. Programa 100% online.</p>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="course-item">
+                        <img src="assets/img/portada_diplomado_en_mineria.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Diplomado</h4>
+                                <p class="price">480 hrs</p>
+                            </div>
+
+                            <h3><a href="carrera_diplomado_mineria.html">Diplomado en Minería - (On-line)</a></h3>
+                            <p>El Departamento de Ingeniería en #MinasUSACH inicia proceso de postulaciones al
+                                “Diplomado en Minería USACH 2025: Herramientas 4.0- On Line“. Programa conducente a
+                                “Ingeniería Civil en Minas Vespertino“ para ingenieros/as de otras especialidades.</p>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
               <div class="course-item">
                 <img src="assets/img/portada_procecucion_estudio.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
@@ -250,21 +265,23 @@
                 </div>
               </div>
             </div>  End Course Item-->
-  
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="course-item">
-                    <img src="assets/img/Portada_economia_circular.png" class="img-fluid" alt="...">
-                    <div class="course-content">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4>Curso</h4>
-                        <p class="price">30 hrs</p>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="course-item">
+                        <img src="assets/img/Portada_economia_circular.png" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Curso</h4>
+                                <p class="price">30 hrs</p>
+                            </div>
+
+                            <h3><a href="carrera_curso_economia_circular_en_minera.html">Economía Circular en Minería - (On-line)</a></h3>
+                            <p>El curso de "Economía Circular en Minería" está diseñado para proporcionar una
+                                comprensión integral de cómo la economía circular puede integrarse y beneficiar a la
+                                industria minera, promoviendo prácticas sostenibles y rentables.</p>
                         </div>
-        
-                        <h3><a href="carrera_curso_economia_circular_en_minera.html">Economía Circular en Minería - (On-line)</a></h3>
-                        <p>El curso de "Economía Circular en Minería" está diseñado para proporcionar una comprensión integral de cómo la economía circular puede integrarse y beneficiar a la industria minera, promoviendo prácticas sostenibles y rentables.</p>
                     </div>
-                </div>
-            </div>
+                </div> <!--End Course Item-->
 
             <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="course-item">
@@ -292,10 +309,10 @@
               </div>
             </div> --> <!-- End Course Item-->
   
-          </div>
+            </div>
   
         </div>
-      </section><!-- End Popular Courses Section -->
+    </section><!-- End Popular Courses Section -->
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
