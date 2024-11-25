@@ -99,7 +99,14 @@ let selectedIndex = -1;
 
 input.addEventListener('input', showSuggestions);
 input.addEventListener('keydown', handleKeyDown);
+input.addEventListener('focus', showSuggestions);
 suggestionsList.addEventListener('click', handleSuggestionClick);
+
+document.addEventListener('click', function(e) {
+    if (e.target !== input && e.target !== suggestionsList) {
+        suggestionsList.style.display = 'none';
+    }
+});
 
 function showSuggestions() {
     const inputValue = input.value.toLowerCase();
