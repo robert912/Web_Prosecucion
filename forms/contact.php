@@ -9,7 +9,8 @@ require '../assets/vendor/php-email-form/SMTP.php';
 // Mensaje de depuración inicial
 //echo "Script PHP cargado correctamente.<br>";
 
-$secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';
+$secretKey = '6LdJuikpAAAAAALgTmvWWPbT2Q6RfRJzm9aHQsgw';//DIMIN
+//$secretKey = '6LcRqCkpAAAAAFCZgzWl6apnHRWTkD81ffZOz5_T';//LocalHost
 
 // Replace contact@example.com with your real receiving email address
 $receiving_email_address = 'p.minas@usach.cl';
@@ -56,8 +57,8 @@ try {
                     $mail->SMTPAuth   = true;                                //Enable SMTP authentication
                     $mail->Username   = 'support@dimin.cl';                  //SMTP username
                     $mail->Password   = '{j+c+eB&VJFj';                      //SMTP password
-                    $mail->Port       =  587;
-                    $mail->SMTPSecure = 'tls';                               //Enable implicit TLS encryption
+                    $mail->Port       =  465;
+                    $mail->SMTPSecure = 'ssl';                               //Enable implicit TLS encryption
 
                     // Configuración de remitente y destinatario
                     $mail->setFrom($_POST['email'], $_POST['name']);
@@ -90,6 +91,8 @@ try {
                     $mail->Body = file_get_contents("../template/template_correo_form.html");
                     $mail->Body = str_replace("nombreForm", $_POST['name'], $mail->Body);
                     $mail->Body = str_replace("mailForm", $_POST['email'], $mail->Body);
+                    $mail->Body = str_replace("fonoForm", $_POST['fono'], $mail->Body);
+                    $mail->Body = str_replace("paisForm", $_POST['pais'], $mail->Body);
                     $mail->Body = str_replace("asuntoForm", $_POST['subject'], $mail->Body);
                     $mail->Body = str_replace("msjForm", $_POST['message'], $mail->Body);
 

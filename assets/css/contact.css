@@ -177,7 +177,7 @@
 
 
 .drag-area label {
-  font-size: 15;
+  font-size: 15px;
   color: #495057 !important;
   font-weight: 500;
   padding: 40px 161px;
@@ -201,3 +201,35 @@
     padding: 40px 26px;
   }
 }
+
+/* Input lista pais formulario contacto */
+.autocomplete {
+  position: relative;
+  margin: 0 auto;
+}
+
+#miFormulario ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 93%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+#miFormulario li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#miFormulario li:hover, #miFormulario li.selected {
+  background-color: #f0f0f0;
+}
+
+/* Fin Input lista pais formulario contacto */
