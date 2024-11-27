@@ -151,7 +151,10 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-
+            <form action="transbank/procesar_pago.php" method="POST">
+                <input type="hidden" name="monto" value="10000">
+                <button type="submit">Pagar con Webpay</button>
+            </form>
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-1 text-center" data-aos="fade-left" data-aos-delay="100">
                     <img class="img-fluid" src="assets/img/INGENIERIA.png" alt=""><br><br>
