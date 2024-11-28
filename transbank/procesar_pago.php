@@ -12,7 +12,7 @@ try {
     $buyOrder = 'orden12345'; // Código único de la orden
     $sessionId = 'session12345'; // ID único de la sesión
     $amount = 10000; // Monto de la transacción
-    $returnUrl = ' https://d704-158-170-177-104.ngrok-free.app/transbank/confirmar_pago.php'; // URL de retorno
+    $returnUrl = 'https://new.dimin.cl/transbank/confirmar_pago.php'; // URL de retorno
 
     // Crear la transacción
     $response = $transaction->create($buyOrder, $sessionId, $amount, $returnUrl);
